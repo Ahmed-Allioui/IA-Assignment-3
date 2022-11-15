@@ -1,5 +1,5 @@
 /**
- * async/await
+ * async/await tutorial
  */
 
  async function f() {

@@ -1,5 +1,5 @@
 /**
- * Promise
+ * Promises tutorial
  */
 
 // Promise represents a value that is unknown for now but it will be known in the future (async value).

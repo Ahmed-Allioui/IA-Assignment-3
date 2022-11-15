@@ -1,6 +1,15 @@
+/**
+ * In this tutorial are some examples, on how to use the framework Express.js
+ */
+
+/** impot the express framework and the bodyparser */
 const express = require('express')
 const bodyParser = require('body-parser');
+
+/** get the app object to work on */
 const app = express()
+
+/** defining the port */
 const port = 3000
 
 /** setting the bodyParser to json in order to parse the bodies of post requests */

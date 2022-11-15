@@ -1,3 +1,7 @@
+/**
+ * In this file, we present some util methods that will be used in our project to access the OpenCRX API
+ */
+
 import axios from 'axios'
 
 const baseUrl = 'https://sepp-crm.inf.h-brs.de/opencrx-rest-CRX';

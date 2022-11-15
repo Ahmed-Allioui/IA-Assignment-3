@@ -1,5 +1,5 @@
 /**
- * Functions
+ * Functions tutorial
  */
 
 // we can simple define a function in this way

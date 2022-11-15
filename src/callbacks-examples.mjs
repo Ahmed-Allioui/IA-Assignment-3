@@ -1,9 +1,8 @@
 /**
- * Callbacks
+ * Callbacks tutorial
+ * A callback function is a function passed into another function as an argument, 
+ * which is then invoked inside the outer function to complete some kind of routine or action.
  */
-
-// A callback function is a function passed into another function as an argument, 
-//which is then invoked inside the outer function to complete some kind of routine or action.
 
 function display(num){
     console.log('The sum is: '+num);

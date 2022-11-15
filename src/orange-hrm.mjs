@@ -1,3 +1,7 @@
+/**
+ * In this file, we present some util methods that will be used in our project to access the OrangeHRM API
+ */
+
 import axios from 'axios';
 import qs from 'querystring';
 

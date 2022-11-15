@@ -1,3 +1,17 @@
+/**
+ * This file presents an algorithm for the calculation of the total bonus for salesmen
+ */
+
+
+/**
+ * Respresents records
+ * @param {*} goalId 
+ * @param {*} goalDescription 
+ * @param {*} targetValue 
+ * @param {*} actualValue 
+ * @param {*} year 
+ */
+
 function Record(goalId, goalDescription, targetValue, actualValue, year) {
     this.goalId = goalId;
     this.goalDescription = goalDescription;
@@ -6,6 +20,13 @@ function Record(goalId, goalDescription, targetValue, actualValue, year) {
     this.year = year;
 }
 
+/**
+ * @param {*} id 
+ * @param {*} createdAt 
+ * @param {*} customer 
+ * @param {*} positions 
+ * @param {*} totalAmountIncludingTax 
+ */
 function SalesOder(id, createdAt, customer, positions, totalAmountIncludingTax) {
     this.id = id;
     this.createdAt = createdAt;
@@ -14,6 +35,13 @@ function SalesOder(id, createdAt, customer, positions, totalAmountIncludingTax) 
     this.totalAmountIncludingTax = totalAmountIncludingTax
 }
 
+/**
+ * @param {*} id 
+ * @param {*} productDescription 
+ * @param {*} quantity 
+ * @param {*} pricePerUnit 
+ * @param {*} amount 
+ */
 function Position(id, productDescription, quantity, pricePerUnit, amount) {
     this.id = id;       // different to positionNumber
     this.productDescription = productDescription
@@ -22,13 +50,26 @@ function Position(id, productDescription, quantity, pricePerUnit, amount) {
     this.amount = amount;
 }
 
+/**
+ * @param {*} id 
+ * @param {*} accountRating 
+ * @param {*} fullName 
+ */
 function Customer(id, accountRating, fullName) {
     this.id = id;       // different to positionNumber
     this.accountRating = accountRating
     this.fullName = fullName;
 }
 
-/** Prototype declaration for Salesman Type */
+/**
+ * Prototype declaration for Salesman Type
+ * @param {*} employeeId 
+ * @param {*} firstName 
+ * @param {*} lastName 
+ * @param {*} jobTitel 
+ * @param {*} records 
+ * @param {*} salesOrders 
+ */
 function Salesman(employeeId, firstName, lastName, jobTitel, records, salesOrders) {
     this.employeeId = employeeId;
     this.firstName = firstName;
