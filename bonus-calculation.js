@@ -29,13 +29,17 @@ function Customer(id, accountRating, fullName) {
 }
 
 /** Prototype declaration for Salesman Type */
-function Salesman() {
-    this.employeeId = null;
-    this.firstName = '';
-    this.lastName = '';
-    this.jobTitel = '';
-    this.records = [];
-    this.salesOrders = [];
+function Salesman(employeeId, firstName, lastName, jobTitel, records, salesOrders) {
+    this.employeeId = employeeId;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.jobTitel = jobTitel;
+    this.records = records;
+    this.salesOrders = salesOrders;
+
+    this.fullName = function() {
+        return this.firstName + ' ' + this.lastName;
+    }
 
     /** Method for adding a record to a salesman */
     this.addRecord = function(record) {
@@ -52,7 +56,7 @@ function Salesman() {
     }
 
     this.salesOrdersOfYear = function(year) {
-        return this.salesOrders.filter(s => s.createdAt.getYear() == year)
+        return this.salesOrders.filter(s => s.createdAt.getFullYear() == year)
     }
 
     this.totalBonus = function(year) {
@@ -75,10 +79,36 @@ function Salesman() {
         for(let salesOrder of salesOrders) {
             bonus += salesOrder.totalAmountIncludingTax * priceFactorForRating(salesOrder.customer.accountRating)
         }
+        return bonus;
     }
 
     function priceFactorForRating(rating) {
-        let salesFactor = 30.0
+        let salesFactor = 1.0
         return (1 / rating) * salesFactor;
     }
 }
+
+/**
+ * Test
+ */
+
+var kitea = new Customer(0, 1, "Kitea");
+
+var today = new Date();
+var year = today.getFullYear();
+
+var position_table = new Position(0, "Table", 2, 200, 400);
+var position_chair = new Position(1, "Chair", 5, 100, 500);
+var positions = [position_table, position_chair];
+
+var salesOrder = new SalesOder(0, today, kitea, positions, 900);
+
+var social_record = new Record(0, "Social skills", 5, 4, year);
+var comm_record = new Record(1, "Communication skills", 5, 6, year);
+var records = [social_record, comm_record];
+
+var salesman = new Salesman(0, "Adam", "Ali", "Salesman", records, [salesOrder]);
+
+var bonus = salesman.totalBonus(year);
+
+console.log(salesman.fullName(), 'will get a total bonus of', bonus, 'euro in the year', year);
